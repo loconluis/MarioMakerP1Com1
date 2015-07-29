@@ -28,16 +28,55 @@ public class jfrmprincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpanel_listaObject = new javax.swing.JPanel();
+        jlabel_banner = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jmenu_principal = new javax.swing.JMenuBar();
         jmenu_carga = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jmenu_about = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mario Maker v1 :::::::::: ");
+
+        jpanel_listaObject.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpanel_listaObject.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jlabel_banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo_v2.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jpanel_listaObjectLayout = new javax.swing.GroupLayout(jpanel_listaObject);
+        jpanel_listaObject.setLayout(jpanel_listaObjectLayout);
+        jpanel_listaObjectLayout.setHorizontalGroup(
+            jpanel_listaObjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_listaObjectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlabel_banner)
+                .addContainerGap(923, Short.MAX_VALUE))
+        );
+        jpanel_listaObjectLayout.setVerticalGroup(
+            jpanel_listaObjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_listaObjectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlabel_banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 534, Short.MAX_VALUE)
+        );
 
         jmenu_carga.setText("Cargas");
 
@@ -48,6 +87,9 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jmenu_carga.add(jMenuItem2);
 
         jmenu_principal.add(jmenu_carga);
+
+        jMenu1.setText("Graficar");
+        jmenu_principal.add(jMenu1);
 
         jmenu_about.setText("Acerca de");
 
@@ -65,11 +107,21 @@ public class jfrmprincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpanel_listaObject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 351, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpanel_listaObject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,12 +163,16 @@ public class jfrmprincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jlabel_banner;
     private javax.swing.JMenu jmenu_about;
     private javax.swing.JMenu jmenu_carga;
     private javax.swing.JMenuBar jmenu_principal;
+    private javax.swing.JPanel jpanel_listaObject;
     // End of variables declaration//GEN-END:variables
 }
