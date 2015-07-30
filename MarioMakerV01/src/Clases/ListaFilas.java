@@ -12,7 +12,7 @@ package Clases;
 public class ListaFilas {
     NodoFila raiz, cola;
     ListaFilas(){raiz=cola=null;}
-    
+    //Inserta una nueva fila
     public void Insertar(int fila){
     NodoFila nuevo= new NodoFila(fila);
         if(raiz==null){// primer nodo 
@@ -43,11 +43,9 @@ public class ListaFilas {
                 aux=aux.sig;
             }
         }
-}    
+    }    
 
-    
-    
-    
+   //verifica si existe
     public Boolean existe(NodoFila nuevo){
     NodoFila aux=raiz;
     while(aux!=null){
