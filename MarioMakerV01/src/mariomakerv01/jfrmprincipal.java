@@ -30,7 +30,9 @@ public class jfrmprincipal extends javax.swing.JFrame {
 
         jpanel_listaObject = new javax.swing.JPanel();
         jlabel_banner = new javax.swing.JLabel();
+        jscroll_listObjects = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        jscroll_world = new javax.swing.JScrollPane();
         jmenu_principal = new javax.swing.JMenuBar();
         jmenu_carga = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -55,13 +57,17 @@ public class jfrmprincipal extends javax.swing.JFrame {
             .addGroup(jpanel_listaObjectLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlabel_banner)
-                .addContainerGap(923, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jscroll_listObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jpanel_listaObjectLayout.setVerticalGroup(
             jpanel_listaObjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanel_listaObjectLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlabel_banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpanel_listaObjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlabel_banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jscroll_listObjects))
                 .addContainerGap())
         );
 
@@ -71,11 +77,11 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jscroll_world)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 534, Short.MAX_VALUE)
+            .addComponent(jscroll_world, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
         );
 
         jmenu_carga.setText("Cargas");
@@ -174,5 +180,7 @@ public class jfrmprincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jmenu_carga;
     private javax.swing.JMenuBar jmenu_principal;
     private javax.swing.JPanel jpanel_listaObject;
+    private javax.swing.JScrollPane jscroll_listObjects;
+    private javax.swing.JScrollPane jscroll_world;
     // End of variables declaration//GEN-END:variables
 }
