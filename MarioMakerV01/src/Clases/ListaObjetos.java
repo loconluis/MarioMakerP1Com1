@@ -11,10 +11,10 @@ public class ListaObjetos {
     public static Objetos cabeza, cola;
     //agrear un objeto a la lista
     public void agregarObjeto(String nombre, int numero){
-        Objetos nuevo=cabeza;
-        if(nuevo == null)
+        Objetos nuevo;
+        if(cabeza == null)
         {
-            nuevo = new Objetos(null, nombre, numero);
+            nuevo = new Objetos(nombre, numero);
             cabeza = nuevo;
             cola = nuevo;
         }
@@ -22,10 +22,16 @@ public class ListaObjetos {
         {
             if(buscarObjeto(numero,0) == null)
             {
-                while(nuevo.sig != null)
-                nuevo = nuevo.sig;
-                nuevo.sig = new Objetos(nuevo, nombre, numero);
-                cola = nuevo.sig;
+                nuevo = new Objetos(nombre, numero);
+                cola.sig = nuevo;
+                nuevo.ant = cola;
+                cola = nuevo;
+//                while(nuevo.sig != null)
+//                nuevo = nuevo.sig;
+//                nuevo.sig = new Objetos(nuevo, nombre, numero);
+//                cola = nuevo.sig;
+//                cabeza = nuevo.ant;
+                
             }
         }
     }

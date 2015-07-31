@@ -15,8 +15,9 @@ public class Objetos {
     
     
     //Constructor de la clase
-    public Objetos(Objetos ant, String name, int num){
+    public Objetos(String name, int num){
         this.sig= null;
+        this.ant= null;
         this.nombre= name;
         this.numero= num;
                

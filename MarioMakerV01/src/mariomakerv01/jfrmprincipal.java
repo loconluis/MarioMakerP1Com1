@@ -87,6 +87,11 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jmenu_carga.setText("Cargas");
 
         jMenuItem1.setText("Carga de Objetos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jmenu_carga.add(jMenuItem1);
 
         jMenuItem2.setText("Eliminacion de Objetos");
@@ -132,6 +137,15 @@ public class jfrmprincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jfrmobjetosimg vobj;
+        vobj = new jfrmobjetosimg();
+        
+        vobj.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 /**
      * @param args the command line arguments
