@@ -1,5 +1,8 @@
 package mariomakerv01;
 
+import java.awt.Color;
+import javax.swing.JButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,11 +15,32 @@ package mariomakerv01;
  */
 public class jfrmprincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form jfrmprincipal
-     */
-    public jfrmprincipal() {
+    public JButton[][] matriz; 
+    
+    public jfrmprincipal(int n) {
+        super();
         initComponents();
+        matriz = new JButton[n][n];
+        int posicionx=0;
+        int posiciony=0;
+
+        for(int i=0;i<n;i++){
+            for(int j=0; j<n;j++){
+                matriz[i][j]=new JButton();
+                matriz[i][j].setBounds(posicionx,posiciony,49,49);
+                posicionx=posicionx+50;
+                matriz[i][j].setBackground(Color.WHITE);
+                jsworld.add(matriz[i][j]);
+
+            }
+            posicionx=0;
+            posiciony=posiciony+50;
+            jsworld.repaint();
+        }
+        jsworld.setLayout(null);
+        jsworld.repaint();
+        jsworld.setBounds(50, 50, 800, 800);
+        
     }
 
     /**
@@ -32,7 +56,7 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jlabel_banner = new javax.swing.JLabel();
         jscroll_listObjects = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jscroll_world = new javax.swing.JScrollPane();
+        jsworld = new javax.swing.JScrollPane();
         jmenu_principal = new javax.swing.JMenuBar();
         jmenu_carga = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -58,8 +82,8 @@ public class jfrmprincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jlabel_banner)
                 .addGap(18, 18, 18)
-                .addComponent(jscroll_listObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(jscroll_listObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jpanel_listaObjectLayout.setVerticalGroup(
             jpanel_listaObjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,11 +101,17 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jscroll_world)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jsworld)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jscroll_world, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(jsworld, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jmenu_carga.setText("Cargas");
@@ -105,6 +135,11 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jmenu_about.setText("Acerca de");
 
         jMenuItem3.setText("Autor");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jmenu_about.add(jMenuItem3);
 
         jMenuItem4.setText("Manual de Usuario");
@@ -120,19 +155,19 @@ public class jfrmprincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpanel_listaObject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpanel_listaObject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -147,40 +182,44 @@ public class jfrmprincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        javax.swing.JOptionPane.showMessageDialog(null, "Luis Alfredo Locon Peña\n 2011-14279\nPractica 1 Compi 1 \nSeccion: B ");
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
 /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new jfrmprincipal().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(jfrmprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new jfrmprincipal().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
@@ -195,6 +234,32 @@ public class jfrmprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmenu_principal;
     private javax.swing.JPanel jpanel_listaObject;
     private javax.swing.JScrollPane jscroll_listObjects;
-    private javax.swing.JScrollPane jscroll_world;
+    private javax.swing.JScrollPane jsworld;
     // End of variables declaration//GEN-END:variables
+
+    
+    
+//    public void matriz(int n){
+//        
+//        matriz = new JButton[n][n];
+//        int posicionx=0;
+//        int posiciony=0;
+//
+//        for(int i=0;i<n;i++){
+//            for(int j=0; j<n;j++){
+//                matriz[i][j]=new JButton();
+//                matriz[i][j].setBounds(posicionx,posiciony,49,49);
+//                posicionx=posicionx+50;
+//                matriz[i][j].setBackground(Color.WHITE);
+//                jsworld.add(matriz[i][j]);
+//
+//            }
+//            posicionx=0;
+//            posiciony=posiciony+50;
+//            jsworld.repaint();
+//        }
+//        jsworld.setLayout(null);
+//        jsworld.repaint();
+//        jsworld.setBounds(50, 50, 800, 800);
+//    }
 }
