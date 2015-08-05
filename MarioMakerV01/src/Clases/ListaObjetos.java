@@ -31,7 +31,7 @@ public class ListaObjetos {
 //                nuevo.sig = new Objetos(nuevo, nombre, numero);
 //                cola = nuevo.sig;
 //                cabeza = nuevo.ant;
-                
+
             }
         }
     }

@@ -97,6 +97,10 @@ public class jfrmprincipal extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jsworld.setBackground(new java.awt.Color(255, 255, 255));
+        jsworld.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jsworld.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,9 +113,9 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addComponent(jsworld, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         jmenu_carga.setText("Cargas");
@@ -125,6 +129,11 @@ public class jfrmprincipal extends javax.swing.JFrame {
         jmenu_carga.add(jMenuItem1);
 
         jMenuItem2.setText("Eliminacion de Objetos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jmenu_carga.add(jMenuItem2);
 
         jmenu_principal.add(jmenu_carga);
@@ -185,6 +194,13 @@ public class jfrmprincipal extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         javax.swing.JOptionPane.showMessageDialog(null, "Luis Alfredo Locon Peña\n 2011-14279\nPractica 1 Compi 1 \nSeccion: B ");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        jfrmeliminacionObj vobjel;
+        vobjel = new jfrmeliminacionObj();
+        
+        vobjel.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 /**
      * @param args the command line arguments
