@@ -6,18 +6,69 @@ package Clases;
  * @author Luis Locon
  */
 public class NodoMatriz {
-    public NodoMatriz ant=null,sig=null,up=null,down=null;
-    public NodoColumna columna = null;
-    public NodoFila fila = null;
-    public int fil=0,col=0;
+    private Object Dato;
+    private NodoMatriz sig, ant, arriba, abajo;
     
-    public NodoMatriz(int row, int col){
-        this.fil=row;
-        this.col=col;
+    //Constructor
+    public NodoMatriz(){  
+        this.Dato= null;
+        this.abajo=null;
+        this.arriba= null;
+        this.sig= null;
+        this.ant = null;
+    }
+    
+    //Agregar informacion al nodo en la matriz
+    public NodoMatriz(Object Dato){
+        this.Dato= Dato;
+        this.abajo=null;
+        this.arriba= null;
+        this.sig= null;
+        this.ant = null;
+    
+    }
+    
+   
+    public Object getDato() {
+        return Dato;
+    }
+
+    public void setDato(Object Dato) {
+        this.Dato = Dato;
+    }
+
+    public NodoMatriz getSig() {
+        return sig;
+    }
+
+    public void setSig(NodoMatriz sig) {
+        this.sig = sig;
+    }
+
+    public NodoMatriz getAnt() {
+        return ant;
+    }
+
+    public void setAnt(NodoMatriz ant) {
+        this.ant = ant;
+    }
+
+    public NodoMatriz getArriba() {
+        return arriba;
+    }
+
+    public void setArriba(NodoMatriz arriba) {
+        this.arriba = arriba;
+    }
+
+    public NodoMatriz getAbajo() {
+        return abajo;
+    }
+
+    public void setAbajo(NodoMatriz abajo) {
+        this.abajo = abajo;
     }
     
     
     
-
-    
-}
+    }
