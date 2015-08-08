@@ -48,8 +48,45 @@ public class MatrixGame {
     }
     
     //Agregar filas
+    public void addFilaIndice(Object Dato){
+        NodoMatriz nodo = new NodoMatriz("RR"+Dato+"RR");
+        
+        try{
+            if (FilaVacia()==true){
+                NodoRaiz.setAbajo(nodo);
+                arriba = nodo;
+                abajo = nodo;
+            }else{
+                NodoMatriz temp  = abajo;
+                temp.setAbajo(nodo);
+                abajo = nodo;
+                abajo.setArriba(temp);
+            }
+        }catch(Exception e){
+            System.out.println("Error al agregar fila Indice " + e);
+        }
+    }
     
     //Agregar columnas
+    public void addColumnaIndice(Object Dato){
+        NodoMatriz nodo = new NodoMatriz("CC"+Dato+"CC");
+        
+        try{
+            if (FilaVacia()==true){
+                NodoRaiz.setSig(nodo);
+                primero = nodo;
+                ultimo = nodo;
+            }else{
+                NodoMatriz temp  = ultimo;
+                temp.setAbajo(nodo);
+                ultimo = nodo;
+                ultimo.setAnt(temp);
+            }
+        }catch(Exception e){
+            System.out.println("Error al agregar Columna Indice " + e);
+        }
+    
+    }
     
     //Metodo buscar nodos
     
@@ -59,8 +96,38 @@ public class MatrixGame {
     
     //Eliminar columna
     
-    //Obtener el nodo columna
+    //Obtener cantidad de columnas y filas
+    public int getFilas(){
+        int ff = 0;
+        try{
+            NodoMatriz temp;
+            temp = NodoRaiz;
+            while(temp !=null){
+                temp = temp.getAbajo();
+                ff++;
+            }
+            return ff;
+        }catch(Exception e){
+            System.out.println("Error no se pudo obtener el numero de filas " + e);
+            return ff;
+        }
+    }
     
+    public int getColumnas(){
+        int cc = 0;
+        try{
+            NodoMatriz temp;
+            temp = NodoRaiz;
+            while(temp!=null){
+            temp = temp.getSig();
+            cc++;
+            }
+            return cc;
+        }catch (Exception e){
+            System.out.println("Error no se pudo obtener el numero de columnas " + e);
+            return cc;
+        }
+    }
     
     
     
